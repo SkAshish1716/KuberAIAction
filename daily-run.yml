@@ -1,0 +1,25 @@
+name: Run Daily JS Script
+
+on:
+  schedule:
+    - cron: '15 10 * * *' # This is 3:45 PM IST = 10:15 AM UTC
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run your JS script
+      run: node backtest.js
