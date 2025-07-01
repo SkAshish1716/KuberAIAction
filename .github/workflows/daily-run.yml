@@ -9,7 +9,7 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_API_KEY: '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'
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
