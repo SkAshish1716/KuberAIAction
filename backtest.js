@@ -79,17 +79,17 @@ async function CurrentBacktest() {
         if (key >= start && key <= end) {
           let currentValue = Strikesdata[key][i];
           Current_Statement += `At strike ${key}, PE price is ${Math.round(
-            currentValue.closepe
+            currentValue?.closepe
           )}, buy quantity PE is ${Math.round(
-            currentValue.buyqtype
+            currentValue?.buyqtype
           )} and sell quantity PE is ${Math.round(
-            currentValue.sellqtype
+            currentValue?.sellqtype
           )}. While CE price is ${Math.round(
-            currentValue.closece
+            currentValue?.closece
           )}, buy quantity ce is ${Math.round(
-            currentValue.buyqtyce
+            currentValue?.buyqtyce
           )} and Sell quantity CE is at ${Math.round(
-            currentValue.sellqtyce
+            currentValue?.sellqtyce
           )}  \n  \n`;
         }
       });
